@@ -39,6 +39,11 @@ body {
   justify-content: space-between;
 }
 
+header {
+  display: grid;
+  gap: 8px;
+}
+
 h1 {
   text-align: center;
   font-family: 'norse-bold';
@@ -48,14 +53,18 @@ h1 {
 }
 
 .search-bar {
+  justify-self: center;
+  max-width: 480px;
+  min-width: 0;
+  width: 100%;
+  padding: 0 16px;
   display: flex;
   gap: 4px;
-  justify-content: center;
-  margin-top: 8px;
 }
 
 .search-bar > input {
-  width: 250px;
+  min-width: 0;
+  flex-grow: 1;
   padding: 4px;
   border: 2px solid rgb(0 95 138 / 0.19);
   border-radius: 6px;
@@ -80,9 +89,8 @@ input:focus {
   background-color: var(--color-accent);
   color: var(--text-on-accent);
   border-radius: 6px;
-  padding: 4px;
   font-size: 1rem;
-  width: 58px;
+  width: 75px;
 }
 
 button:hover {
