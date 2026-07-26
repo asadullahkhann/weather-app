@@ -20,8 +20,6 @@ function renderWeatherInfo(weatherInfo) {
   statusSpan.textContent = '';
   addressPara.textContent = weatherInfo.address;
   iconImg.src = require(`${iconsPath}/${weatherInfo.icon}.svg`);
-  if (celsiusBtn.checked) renderInCelsius(weatherInfo);
-  else renderInFahrenheit(weatherInfo);
   humidityPara.textContent = `Humidity: ${weatherInfo.humidity}%`;
   conditionsPara.textContent = weatherInfo.conditions;
   descriptionPara.textContent = weatherInfo.description;
@@ -29,20 +27,19 @@ function renderWeatherInfo(weatherInfo) {
   for (let i = 0; i < 7; i++) {
     const date = new Date(days[i].datetime);
     const weekday = date.toLocaleDateString('en-US',{weekday: 'short'});
-    const tempMax = days[i].metric.tempMax;
-    const tempMin = days[i].metric.tempMin;
     const wrapperDiv = document.createElement('div');
     const weekdayPara = document.createElement('p');
     const iconImg = document.createElement('img');
     const tempPara = document.createElement('p');
     weekdayPara.textContent = weekday;
     iconImg.src = require(`${iconsPath}/${days[i].icon}.svg`);
-    tempPara.textContent = `${tempMax}°/${tempMin}°`;
     wrapperDiv.appendChild(weekdayPara);
     wrapperDiv.appendChild(iconImg);
     wrapperDiv.appendChild(tempPara);
     forecastDiv.appendChild(wrapperDiv);
   };
+  if (celsiusBtn.checked) renderInCelsius(weatherInfo);
+  else renderInFahrenheit(weatherInfo);
 };
 
 function renderInFahrenheit(weatherInfo) {
