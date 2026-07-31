@@ -54,11 +54,12 @@ h1 {
 
 .search-bar {
   justify-self: center;
-  max-width: 420px;
+  max-width: 452px;
   min-width: 0;
   width: 100%;
   display: flex;
   gap: 4px;
+  padding: 0 16px;
 }
 
 .search-bar > input {
@@ -131,6 +132,7 @@ span.spinner {
 main {
   display: flex;
   justify-content: center;
+  padding: 16px;
 }
 
 .weather-card {
@@ -329,8 +331,5 @@ footer img {
   .forecast {
     grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
     gap: 12px 4px;
-  }
-  main, .search-bar {
-    padding: 0 16px;
   }
 }
