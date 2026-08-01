@@ -230,7 +230,7 @@ input:checked::after {
 div.current-weather {
   display: flex;
   gap: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .current-weather > div {
@@ -329,7 +329,34 @@ footer img {
 
 @media (max-width: 419px) {
   .forecast {
-    grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
-    gap: 12px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .forecast > div {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border: 1px solid rgb(31 41 55 / 0.1);
+    border-radius: 6px;
+  }
+  .weekday {
+    display: none;
+  }
+  .formatted-date {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 450;
+    width: 105px;
+    white-space: nowrap;
+  }
+  .forecast img {
+    width: 24px;
+    height: 24px;
+  }
+  .forecast p:last-child {
+    font-size: 0.875rem;
+    width: 64px;
+    text-align: right;
   }
 }

@@ -26,14 +26,26 @@ function renderWeatherInfo(weatherInfo) {
   forecastDiv.textContent = '';
   for (let i = 0; i < 7; i++) {
     const date = new Date(days[i].datetime);
-    const weekday = date.toLocaleDateString('en-US',{weekday: 'short'});
+    const weekday = date.toLocaleDateString('en-GB',{weekday: 'short'});
+    let formattedDate = date.toLocaleDateString(
+      'en-GB', 
+      {day: 'numeric', month: 'short'}
+    );
+    if (i === 0) formattedDate += ' Today';
+    else if (i === 1) formattedDate += ' Tomorrow';
+    else formattedDate += ` ${weekday}`;
     const wrapperDiv = document.createElement('div');
     const weekdayPara = document.createElement('p');
+    const formattedDatePara = document.createElement('p');
     const iconImg = document.createElement('img');
     const tempPara = document.createElement('p');
     weekdayPara.textContent = weekday;
+    formattedDatePara.textContent = formattedDate;
+    weekdayPara.classList.add('weekday');
+    formattedDatePara.classList.add('formatted-date', 'hide');
     iconImg.src = require(`${iconsPath}/${days[i].icon}.svg`);
     wrapperDiv.appendChild(weekdayPara);
+    wrapperDiv.appendChild(formattedDatePara);
     wrapperDiv.appendChild(iconImg);
     wrapperDiv.appendChild(tempPara);
     forecastDiv.appendChild(wrapperDiv);
