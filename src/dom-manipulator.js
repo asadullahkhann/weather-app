@@ -11,6 +11,8 @@ const statusSpan = document.querySelector('span#status');
 const forecastDiv = document.querySelector('.forecast');
 const errorMsgPara = document.querySelector('p.error-msg');
 const celsiusBtn = document.querySelector('#celsius-btn');
+const uvIndexPara = document.querySelector('.uv-index');
+const precipPara = document.querySelector('.precip');
 
 function renderWeatherInfo(weatherInfo) {
   const iconsPath = './images/visualcrossing-icons-1st-set';
@@ -20,9 +22,11 @@ function renderWeatherInfo(weatherInfo) {
   statusSpan.textContent = '';
   addressPara.textContent = weatherInfo.address;
   iconImg.src = require(`${iconsPath}/${weatherInfo.icon}.svg`);
-  humidityPara.textContent = `Humidity: ${weatherInfo.humidity}%`;
+  humidityPara.textContent = `${weatherInfo.humidity}%`
   conditionsPara.textContent = weatherInfo.conditions;
   descriptionPara.textContent = weatherInfo.description;
+  uvIndexPara.textContent = weatherInfo.uvindex;
+  precipPara.textContent = `${weatherInfo.precipprob}%`;
   forecastDiv.textContent = '';
   for (let i = 0; i < 7; i++) {
     const date = new Date(days[i].datetime);
@@ -41,8 +45,8 @@ function renderWeatherInfo(weatherInfo) {
     const tempPara = document.createElement('p');
     weekdayPara.textContent = weekday;
     formattedDatePara.textContent = formattedDate;
-    weekdayPara.classList.add('weekday');
-    formattedDatePara.classList.add('formatted-date', 'hide');
+    weekdayPara.classList.add('weekday', 'semi-bold');
+    formattedDatePara.classList.add('formatted-date', 'semi-bold', 'hide');
     iconImg.src = require(`${iconsPath}/${days[i].icon}.svg`);
     wrapperDiv.appendChild(weekdayPara);
     wrapperDiv.appendChild(formattedDatePara);
@@ -60,7 +64,7 @@ function renderInFahrenheit(weatherInfo) {
   const windspeed = weatherInfo.windspeed;
   currTempPara.textContent = `${weatherInfo.temp}°`;
   feelsLikePara.textContent = `Feels like ${feelslike}°`;
-  windSpeedPara.textContent = `Wind: ${windspeed} mph`;
+  windSpeedPara.textContent = `${windspeed} mph`;
   forecastDiv.querySelectorAll('p:last-child').forEach((para, i) => {
     para.textContent = `${days[i].tempmax}°/${days[i].tempmin}°`;
   });
@@ -72,7 +76,7 @@ function renderInCelsius(weatherInfo) {
   const windspeed = weatherInfo.metric.windspeed;
   currTempPara.textContent = `${weatherInfo.metric.temp}°`;
   feelsLikePara.textContent = `Feels like ${feelslike}°`;
-  windSpeedPara.textContent = `Wind: ${windspeed} km/h`
+  windSpeedPara.textContent = `${windspeed} km/h`
   forecastDiv.querySelectorAll('p:last-child').forEach((para, i) => {
     const tempMax = days[i].metric.tempMax;
     const tempMin = days[i].metric.tempMin

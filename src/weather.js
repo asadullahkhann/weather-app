@@ -25,7 +25,9 @@ function getRequiredWeatherInfo(weather) {
     humidity,
     temp,
     windspeed,
-    icon
+    icon,
+    uvindex,
+    precipprob,
   } = currentConditions;
   conditions = conditions.replace('Partially', 'Partly');
   conditions = conditions.replace('partially', 'partly');
@@ -47,7 +49,9 @@ function getRequiredWeatherInfo(weather) {
     conditions,
     humidity,
     windspeed, 
-    metric
+    metric,
+    uvindex,
+    precipprob
   };
 };
 
