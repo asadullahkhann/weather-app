@@ -27,4 +27,4 @@ A simple weather app that lets you search for any city and view the current weat
 
 ## Live Demo
 
-https://asadullahkhann.github.io/odin-weather-app/
+https://asadullahkhann.github.io/weather-app/
