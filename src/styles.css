@@ -387,7 +387,7 @@ footer {
     width: 64px;
     text-align: right;
   }
-  .weather-metrics > div:nth-child(2) {
+  .weather-metrics > div:last-child {
     display: none;
   }
   .weather-metrics {
