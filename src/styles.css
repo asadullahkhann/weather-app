@@ -59,12 +59,12 @@ h1 {
 
 .search-bar {
   justify-self: center;
-  max-width: 452px;
+  max-width: 438px;
   min-width: 0;
   width: 100%;
   display: flex;
   gap: 4px;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 .search-bar > input {
@@ -142,10 +142,10 @@ main {
   gap: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   border: 1px solid rgb(255 255 255 / 0.2);
-  padding: 16px;
-  border-radius: 12px;
+  padding: 12px;
+  border-radius: 16px;
   width: 100%;
-  max-width: 420px;
+  max-width: 414px;
 }
 
 div.address {
@@ -180,7 +180,7 @@ div.address {
   position: absolute;
   right: 0;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -362,7 +362,7 @@ footer img {
   height: 16px;
 }
 
-@media (max-width: 419px) {
+@media (max-width: 413px) {
   .forecast {
     display: flex;
     flex-direction: column;
@@ -373,7 +373,7 @@ footer img {
     justify-content: space-between;
     padding: 10px 12px;
     border: 1px solid rgb(31 41 55 / 0.1);
-    border-radius: 6px;
+    border-radius: 4px;
   }
   .weekday {
     display: none;
