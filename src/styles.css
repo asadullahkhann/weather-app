@@ -278,7 +278,7 @@ p.desc {
   grid-row: 3 / 4;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px;
 }
 
 .weather-metrics > div {
@@ -286,6 +286,9 @@ p.desc {
   flex-direction: column;
   gap: 4px;
   align-items: center;
+  background-color: rgb(255 255 255 / 0.18);
+  border-radius: 4px;
+  padding: 10px;
 }
 
 .weather-metrics img {
@@ -392,5 +395,11 @@ footer img {
     font-size: 0.875rem;
     width: 64px;
     text-align: right;
+  }
+  .weather-metrics > div:nth-child(2) {
+    display: none;
+  }
+  .weather-metrics {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
