@@ -161,6 +161,7 @@ div.address {
 }
 
 .address > img {
+  width: auto;
   height: 20px;
 }
 
@@ -291,11 +292,6 @@ p.desc {
   padding: 10px;
 }
 
-.weather-metrics img {
-  width: 20px;
-  height: 20px;
-}
-
 .value {
   font-size: 0.85rem;
 }
@@ -358,11 +354,6 @@ footer {
   gap: 4px;
   justify-content: center;
   align-items: center;
-}
-
-footer img {
-  width: 16px;
-  height: 16px;
 }
 
 @media (max-width: 413px) {
